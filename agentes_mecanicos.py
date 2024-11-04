@@ -48,7 +48,7 @@ analise_moto_1 = Task(
     expected_output="""Após ouvir o relato do cliente, o mecânico vai fazer um relatório identificando 
     as possíveis peças com defeito. O diagnóstico precisa ser preciso para evitar custos desnecessários.""",
     agent=mecanico_1,
-    output_file="relatorio_mecanico_11.txt"
+    output_file="src/result/relatorio_mecanico_11.txt"
 )
 
 analise_moto_2 = Task(
@@ -57,7 +57,7 @@ analise_moto_2 = Task(
     expected_output="""Após ouvir o relato do cliente, o mecânico vai fazer um relatório identificando 
     as possíveis peças com defeito. O diagnóstico precisa ser preciso para evitar custos desnecessários.""",
     agent=mecanico_2,
-    output_file="relatorio_mecanico_22.txt"
+    output_file="src/result/relatorio_mecanico_22.txt"
 )
 
 
@@ -65,9 +65,11 @@ analise_moto_2 = Task(
 crew = Crew(
     agents=[mecanico_1, mecanico_2],
     tasks=[analise_moto_1, analise_moto_2],
+    process=Process.sequential,
     verbose=True,
 )
 
+Process.sequential
 result = crew.kickoff()
 
 print(result)

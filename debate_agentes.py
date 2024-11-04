@@ -64,7 +64,7 @@ def criar_crew_debate(qtd_agentes, qtd_rodadas, problema):
         description = f"Após o gerente consolidar todo o debate o editor vai receber os principais pontos de discursão e vai criar um post para Linkedin.",
         expected_output="Um texto bem elaborado e informal para uma postagem no Linkedin não use sem os bulets points.",
         agent=editor,
-        output_file="post3.txt"
+        output_file="src/result/post3.txt"
     )
 
     crew = Crew(
